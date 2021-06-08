@@ -1,0 +1,181 @@
+/*------------------------------------------------------------------
+Primary use:    footer.css file used for styling components
+                inside footer element
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Layout]
+-------------------------------------------------------------------*/
+
+
+.region-content p a, .region-below-content p a, .region-above-content p a, footer.footer a {
+    background-image: linear-gradient(120deg, #edba32 0%, #edba32 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 106%;
+    transition: background-size 0.15s ease-in;
+    color: #444;
+}
+
+.region-content p a:hover, .region-below-content p a:hover, .region-above-content p a:hover, footer.footer a:hover {
+    background-size: 105% 105%;
+    cursor: pointer;
+}
+.news-center-view-display .view-footer {
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.news-center-view-display .view-footer .button, .news-center-view-display .view-footer a.button {
+    font-size: 2.6rem;
+    padding: 0.5rem 3.5rem 0.1rem;
+}
+
+footer.footer {
+    padding: 0;
+    color: white;
+    background-color: #222;
+    margin-top: 0px;
+}
+
+footer.footer .footer-new {
+    position: relative;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, 0) 90%), url('../assets/images/footer-logo.JPG');
+    padding: 5em 3em 1.5em 3em;
+    min-height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    
+}
+
+footer.footer .footer-new a, footer.footer .footer-new p {
+    color: #fff;
+    font-size: .9em;
+    line-height: 1.2em;
+    font-weight: normal;
+    text-align: center;
+    padding: 1em 0px;
+}
+
+footer.footer .footer-logo {
+    padding-bottom: 1em;
+}
+
+footer.footer .footer-icon {
+    font-size: 1.6em !important;
+    padding: 0px .7em !important;
+}
+
+footer.footer .footer-end {
+    background-color: #222;
+    color: #fff;
+    font-size: .8em;
+    font-weight: normal;
+    text-align: center;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+/* footer.footer .footer-end .address-phone {
+    padding: 2em 0 0;
+}
+
+footer.footer .footer-end .copyright {
+    padding: 0.5em 0 2em;
+
+} */
+
+footer.footer .footer-end a {
+    color: #fff;
+}
+
+footer.footer .footer-new a, footer.footer .footer-new p {
+    color: #fff;
+    font-size: .9em;
+    line-height: 1.2em;
+    font-weight: normal;
+    text-align: center;
+    padding: 1em 0px;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px
+}
+
+.margin-zero{
+    margin: 0 0 0px !important;
+}
+
+@media (min-width:768px) {
+    .col-sm-offset-0 {
+        margin-left: 18%;
+    }
+    .col-12 {
+        width: 75%;
+    }
+    .col-12 {
+        width: 75%;
+    }
+    .address-phone {
+        padding: 0.65em 1em;
+        text-align: left;
+    }
+    .copyright {
+        padding: 0.65em 1em;
+        text-align: right;
+    }
+}
+
+@media (min-width:992px) {
+    .col-md-6 {
+        width: 50%;
+    }
+    .col-md-offset-3 {
+        margin-left: 33.333333%;
+    }
+    footer.footer .footer-end .address-phone {
+        padding: 0.65em 1em;
+        text-align: left;
+    }
+    footer.footer .footer-end .copyright {
+        padding: 0.65em 1em;
+        text-align: right;
+    }
+}
+
+@media (min-width:1200px) {
+    .col-lg-4 {
+        width: 33.33333333%;
+    }
+    .col-lg-offset-4 {
+        margin-left: 33.33333333%;
+    }
+
+    .img-responsive{
+        max-width: 100%;
+    }
+    .footer.footer .footer-new p {
+        max-width: 100%;
+    }
+}
+
+@media (max-width:767px) {
+    .copyright {
+        padding: 0.65em 1em;
+        text-align: center;
+    }
+    .address-phone {
+        padding: 0.65em 1em;
+        text-align: center;
+    }
+}

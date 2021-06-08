@@ -1,0 +1,66 @@
+.level1{
+    color: white;
+}
+
+.level1 > button.btn-link {
+    background-color: #46166b;
+}
+
+.level1 > button.btn-link .content-header-no-margin{
+    background-color: #46166b;
+}
+
+.level1 > .fa-chevron-down{
+    line-height: 33px;
+}
+
+.level2{
+    color: white;
+}
+
+.level2:hover{
+    color: white;
+    background-color: white;
+}
+
+.level2 > button.btn-link{
+    background-color: white;
+    color:#46166b;
+    padding: 7px;
+}
+
+.level2 > button.btn-link .content-header-no-margin{
+    background-color: white;
+    color:#46166b;
+}
+
+.level2 > button.btn-link .content-header-no-margin > .fa-chevron-down{
+    line-height: 28px;
+    color:#46166b;
+}
+
+.level3{
+    background-color: #d1d1d1;
+    color: #46166C;
+}
+
+.level3:hover{
+    color: white;
+    background-color: #d1d1d1;
+}
+
+.level3 > button.btn-link{
+    background-color: #d1d1d1;
+    color: #46166C;
+    padding: 5px;
+}
+
+.level3 > button.btn-link .content-header-no-margin{
+    background-color: #d1d1d1;
+    color: #46166C;
+}
+
+.level3 > button.btn-link .content-header-no-margin > .fa-chevron-down{
+    line-height: 24px;
+    color: #46166C;
+}

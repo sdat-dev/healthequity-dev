@@ -1,0 +1,32 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Primary use:    home.css file used for styling home page
+-------------------------------------------------------------------*/
+.home-logo{
+    width: 100px;
+    transition: all .15s ease-in-out;
+}
+
+.home-logo-container{
+    margin: 10px 20px 0px 20px;
+    width: 220px;
+    text-align: center;
+}
+
+.home-logo-container:hover{
+    cursor: pointer;
+}
+
+.home-logo-container:hover > .home-logo{
+    transform: scale(1.2);
+}
+
+.home-logo-container:hover > p{
+    text-decoration: underline;
+}
+
+.home-logo-container > p{
+    color: #46166C;
+    font-weight: bold;
+}

@@ -1,0 +1,112 @@
+.nav-pills, .nav-item a, .nav-links {
+    color: #46166b;
+    text-transform: uppercase;
+}
+
+.partner-info{
+    margin-right: 5%;
+    margin-bottom: 40px;
+    min-height: 200px;
+}
+
+.partner-info a{
+    color: #46166b;
+}
+
+.partner-logo{
+    max-width: 200px;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    clear: both;
+}
+
+.btn-mav{
+    background-color: #46166b;
+    color: white;
+}
+
+.btn:focus{
+ box-shadow: 0 0 0 0;
+ color: white;
+}
+
+.btn:hover {
+    border:2px solid #46166b;
+    background-color: white;
+    color: #46166b;
+    text-decoration: none;
+}
+
+.btn-mav > i{
+ margin-left: 10px;
+}
+
+.mav-header > .collapsed> i {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+} 
+.address{
+    margin-bottom: 20px;
+}
+
+.poc{
+    padding-left: 0px!important;
+    margin-bottom: 20px;
+}
+
+.address span{
+    color: #46166b;
+    text-transform: uppercase;
+}
+
+.poc span{
+    color: #46166b;
+    text-transform: uppercase;
+}
+
+.icon-container  img{
+    width: 30px;
+    margin: 5px 10px 10px 0px;
+}
+
+@media screen and (max-width: 1192px)
+{
+    .partner-info{
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 991px)
+{
+    .partner-logo{
+        float: left;
+        margin-right: 200px;
+        margin-left: 0px;
+        padding-bottom: 10px;
+    }
+    .partner-info{
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 767px)
+{
+    .partner-logo{
+        float: right;
+        margin-left: 20px;
+        margin-right: 0px;
+        padding-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    .partner-logo{
+        float: left;
+        margin-left: 0px;
+        margin-right: 60%;
+        padding-bottom: 10px;
+    }
+}

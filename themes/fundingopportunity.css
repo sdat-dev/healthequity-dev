@@ -1,0 +1,120 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Primary use:    funding-opportunity.css file used for styling funding
+                opportunities page
+-------------------------------------------------------------------*/
+.agency-logo{
+    width: 140px;
+    margin-left: -10px;
+    margin-bottom: 10px;
+    margin-right: 5%;
+}
+
+.opp-header{
+    clear: left;
+}
+
+.fas{
+    padding-bottom: 5px;
+}
+
+.opportunity-container{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #C0C0C0;
+}
+
+.details-button{
+    background-color: #46166C;
+    padding: 3px 10px 3px 10px;
+    border-radius: 4%;
+    color: white;
+    font-size: 20px;
+}
+
+.details-button:hover{
+    background-color: white;
+    border-radius: 4%;
+    color:#46166C;
+    border: 1px solid #46166C;
+}
+
+.opp-details{
+    clear: both;
+}
+
+.opp-description{
+    display: block;
+    margin-top: 10px;
+}
+
+.image-container > img{
+    width: 180px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+
+.image-container{
+    height: 185px;
+    width: 190px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.grants-logo-container{
+    display: block;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    text-align: center;   
+}
+
+#grants-logo{
+    width: 195px;
+}
+
+.card-header h3.content-header-no-margin{
+    text-transform: inherit;
+} 
+
+.mav-header{
+    width: 100%;
+}
+
+.mav-header > .btn{
+    border: 0px solid transparent;
+}
+
+.mav-header > .btn:hover{
+    border: 1px solid #46166C;
+}
+
+.mav-header > .btn:focus{
+    box-shadow: none;
+}
+
+.btn-mav{
+    background-color: #46166b;
+    color: white;
+}
+
+.btn-mav > i{
+ margin-left: 10px;
+}
+
+.mav-header > .collapsed> i {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+} 
+
+.btn-mav > .fas{
+    padding-bottom: 0px;
+}
+
+.width100{
+    width: 100%;
+}

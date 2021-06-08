@@ -1,0 +1,112 @@
+/**
+ * Albany External Responsive Stylesheet
+ * This stylesheet contains responsive styles that
+ * override albany-responsive.css in the site's theme.
+ */
+
+
+/* PRIMARY BREAK POINT */
+@media screen and (min-width: 768px){
+  /* POLICY */
+  body.page-node-type-policy .sidebar-first {
+    margin-top: 4.5em;
+  }
+  /* Front page Program Search */
+  input#programsearch-input {
+    padding-left: 2.7em !important; /* important needed to get around injector */
+    font-size: 1.8rem;
+  }
+  /* News listings image styles */
+  .article-panel img {
+  	float: left;
+  	margin: 0 1em 2em 0;
+  	min-width: unset;
+  }
+  /* News Archives for Desktop */
+  #block-albany-views-block-news-block-2 .article-panel,
+  #block-views-block-news-block-2 .article-panel {
+  	padding: 0;
+  }
+  #block-albany-views-block-news-block-2 .news-center-view-display .article,
+  #block-views-block-news-block-2 .news-center-view-display .article {
+  	margin-bottom: 1em;
+  	border: none;
+  }
+  #block-albany-views-block-news-block-2 img,
+  #block-views-block-news-block-2 img {
+  	width: 160px;
+  }
+  #block-albany-views-block-news-block-2 .news-center-view-display .article-title,
+  #block-views-block-news-block-2 .news-center-view-display .article-title {
+  	font-size: 2.2rem;
+  }
+  #block-albany-views-block-news-block-2 .article-date,
+  #block-views-block-news-block-2 .article-date {
+  	font-size: 0.9em;
+  }
+  #block-albany-views-block-news-block-2 .btn.btn-primary,
+  #block-views-block-news-block-2 .btn.btn-primary {
+  	display: none;
+  }
+  /* Departmental News */
+  .paragraph--type--dept-news .news-article .dept-news-image > img {
+  	padding: 0 1.5em 1em 0;
+  	max-width: 100%;
+  }
+  .paragraph--type--dept-news .news-article h3 {
+  	padding-top: 4px;
+  }
+}
+
+
+/*Form Modal for Node 60991*/
+@media screen and (min-width: 801px) and (max-width: 1100px){
+ .path-node-60991 #requestinfo .popup{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 800px){
+.path-node-60991 #requestinfo .popup{
+    width:85%;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  .paragraph--type--location .location-detail-text .contact-numbers {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* FIXES FOR IE10 and IE11 */
+/* Cannot use CSS Grid in these browsers. Lock to IE with (-ms-high-contrast: none) selector. */
+@media screen and (min-width: 768px) and (-ms-high-contrast: none) {
+  #main-nav li {
+    float: left;
+    width: 125px;
+  }
+  #main-nav li li {
+    float: none;
+  }
+  .region-mobile-navigation.drawer-nav {
+    display: none !important;
+  }
+  #block-albany-searchblockbutton a::before {
+    font-size: 16px !important;
+  }
+  #block-albany-searchblockbutton a {
+    font-size: 0;
+  }
+}
+@media screen and (min-width: 992px) and (-ms-high-contrast: none) {
+  #main-nav li {
+    width: 140px;
+  }
+}
+@media screen and (min-width: 1200px) and (-ms-high-contrast: none) {
+  #main-nav li {
+    width: 176px;
+  }
+}

@@ -1,0 +1,76 @@
+/*------------------------------------------------------------------
+Primary use:    Accordion.css file used for styling content
+                inside Academic programs page
+-------------------------------------------------------------------*/
+.accordion-header > .paragraph-question{
+    font-family: 'News Cycle', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: #46166b;
+    padding: 8px 20px;
+}
+
+.accordion-header{
+    background-color: #DDD;
+    border-radius: 1%;
+}
+
+.accordion-header:hover{
+    cursor: pointer;
+}
+
+.accordion-header > .content-header-no-margin{
+    padding: 8px 20px;
+}
+
+.accordion-header > .content-header-no-margin:hover{
+    padding: 6px 20px 11px 20px;
+    text-decoration: underline;
+}
+
+.accordion-content{
+    display: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+button.btn-link, button.btn-link  .content-header-no-margin{
+    color: white;
+    background-color: #46166b;;
+    margin-bottom: 0px;
+}
+
+button.btn-link{
+    width: 100%;
+    padding: 10px;
+    border-radius: 1%;
+    text-align: left;
+}
+
+button.btn-link:hover, button.btn-link > .content-header-no-margin:hover{
+    color: inherit;
+}
+
+.card{
+    background-color: transparent;
+    border: 0px;
+    margin-bottom: 1px;
+}
+
+.card-header{
+    color: #46166b;;
+    padding: 0px;
+    border-radius: 1%;
+}
+
+.card-header:hover{
+    color: white;
+    background-color: #46166b;;
+}
+
+.fa-chevron-down{
+    float: right;
+    margin-right: 10px;
+    color: white;
+    line-height: 30px;
+    font-size: 15px;
+}

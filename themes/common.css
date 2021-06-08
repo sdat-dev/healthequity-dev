@@ -1,0 +1,611 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Primary use:    Common.css file used for styling header and
+                common components across the SAFER website
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Layout]
+
+* body
+    + Header / #navbar-header
+    + Landing-Page-Wrapper / .landing-page-image-wrapper
+        -Landing-Page-Image / .landing-page-image
+    + Content / .content-wrapper
+        - Buffer Space/ .buffer 
+        - Side Navigation bar / #navigation-bar
+        - Main Content/ .main-content
+    + Footer / #footer
+        - Address/ address
+        - Footer Navigation/ .footer-navigation
+        - CopyRight Content/ #copyright-content
+-------------------------------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.buffer {
+    height: 100px;
+    width: 100%;
+}
+
+.grey-content-header {
+    color: #777;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.black-content-header-less-margin {
+    color: #555;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+.black-content-header-no-margin {
+    color: #555;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+}
+
+.grey-content-header-less-margin {
+    color: #777;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.content-header {
+    color: #46166B;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.content a {
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 106%;
+    transition: background-size 0.15s ease-in;
+    color: #46166B !important;
+    /* text-decoration: underline !important;
+    text-decoration-color: #edba32 !important; */
+}
+
+.content a:hover {
+    background-image: linear-gradient(120deg, #edba32 0%, #edba32 100%);
+    background-size: 105% 105%;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.content-header-top-bottom-margin {
+    color: #46166C;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    margin: 20px 0px;
+    text-transform: uppercase;
+}
+
+.content-header-no-margin {
+    color: #46166b;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 32px;
+}
+
+.content-wrapper {
+    background: url('../assets/images/bkg-gray-pattern-tile.png');
+}
+
+.email-link {
+    color: black !important;
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 106%;
+    transition: background-size 0.15s ease-in;
+    color: #444;
+    text-decoration: underline !important;
+    text-decoration-color: #edba32 !important;
+}
+
+.email-link:hover {
+    background-image: linear-gradient(120deg, #edba32 0%, #edba32 100%);
+    background-size: 105% 105%;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.display-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.landing-page-image-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+#page-header {
+    width: 100%;
+    position: relative;
+    padding-top: 134px;
+}
+
+.learn-more-text {
+    text-decoration: underline;
+    color: #46166b;
+}
+
+.email-link {
+    color: cornflowerblue;
+    text-decoration: underline;
+}
+
+.no-link-decoration {
+    color: #46166b;
+    text-decoration: none !important;
+    font-size: 28px;
+}
+
+.no-link-decoration:hover {
+    color: inherit;
+}
+
+.main-content {
+    color: #333333;
+    font-size: 20px;
+    font-family: 'PublicSans', sans-serif!important;
+    line-height: 26px;
+    padding-bottom: 30px;
+}
+
+#navbar-header {
+    background-color:#004C93;
+    height: 100px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.sub-list {
+    padding-left: 30px;
+}
+
+.none-list {
+    list-style: none;
+}
+
+.num-list {
+    list-style: decimal;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+#landing-page-text-wrapper {
+    background-color: rgb(0, 0, 0, 0.5);
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    text-shadow: 3px 1px 2px black;
+    left: 5%;
+    padding: 10px;
+    position: absolute;
+}
+
+#landing-page-text-wrapper>h1 {
+    color: white;
+    text-transform: uppercase;
+}
+
+#landing-page-text-wrapper>p {
+    color: #eeb211;
+    font-size: 35px !important;
+}
+
+#landing-logo-wrapper {
+    position: absolute;
+    right: 5%;
+}
+
+#landing-logo-wrapper>img {
+    width: 100%;
+}
+
+.list-lower-alpha {
+    list-style-type: lower-alpha;
+}
+
+.list-more-indentation>li {
+    padding-left: 5px;
+}
+
+.list-lower-roman {
+    list-style-type: lower-roman;
+}
+
+.sub-list>li {
+    padding-left: 10px;
+}
+
+.purple-font {
+    color: #46166C;
+}
+
+.PURPLE-FONT {
+    color: #46166C;
+}
+
+.yellow-font {
+    color: #eeb211;
+}
+
+.YELLOW-FONT {
+    color: #eeb211;
+}
+
+.black-font {
+    color: black;
+}
+
+.BLACK-FONT {
+    color: black;
+}
+
+.blue-font {
+    color: #46166b;
+}
+
+.BLUE-FONT {
+    color: #46166b;
+}
+
+.grey-font {
+    color: #838687;
+}
+
+.GREY-FONT {
+    color: #838687;
+}
+
+.cyan-font {
+    color: #009EE0;
+}
+
+.CYAN-FONT {
+    color: #009EE0;
+}
+
+.deepblue-font {
+    color: #46166B;
+}
+
+.DEEPBLUE-FONT {
+    color: #46166B;
+}
+
+.content-tool-bar {
+    position: relative;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.button-properties {
+    color: white;
+    background-color: #46166b;
+    padding: 9px !important;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'News Cycle', Helvetica, Arial, sans-serif;
+    margin-top: 20px;
+    margin-left: 32px;
+    border-radius: 1%;
+}
+
+.button-properties>a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.button-properties>a img {
+    max-height: 30px !important;
+}
+
+.button-properties:hover {
+    background-color: white;
+    color: #46166b;
+    border: 2px solid #46166b;
+}
+
+#register-button {
+    color: white;
+    background-color: #46166b;
+    padding: 9px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'News Cycle', Helvetica, Arial, sans-serif;
+    margin-top: 20px;
+    margin-left: 32px;
+    border-radius: 1%;
+}
+
+#register-button>a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#register-button>a img {
+    height: 30px;
+}
+
+.list-preceding-paragraph, .zero-bottom-margin-paragraph {
+    margin-bottom: 0px;
+}
+
+.content>#search-box {
+    background-color: #F9F9F9;
+    height: 40px;
+    border: 1px solid #B9B9B9;
+    border-radius: 1%;
+    font-size: 20px;
+    padding: 5px 0px 10px 2px;
+}
+
+.content>#search-box-results {
+    display: block;
+}
+
+#search-button {
+    height: 40px;
+    width: 40px;
+    background-color: #46166b;
+    color: white;
+    position: relative;
+    top: 2px;
+    left: -1px;
+}
+
+.ualbany-logo-wrapper {
+    height: 100px;
+    width: 100%;
+}
+
+.ualbany-logo {
+    margin-left: 5px;
+}
+
+.nysdoh-logo {
+    margin-top: 25px;
+    margin-right: 5px;
+}
+
+.sunny-logo {
+    max-width: 100px;
+    width: 100%;
+}
+
+.downstate-logo {
+    margin-top: 20px;
+    margin-right: 5px;
+    max-width: 222px;
+    width: 100%;
+}
+
+.upstate-logo {
+    margin-top: 25px;
+    margin-right: 5px;
+    max-width: 170px;
+    width: 100%;
+}
+
+.sponsor-title-container {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.sponsor-title {
+    display: block;
+    font-weight: bold;
+}
+
+.sponsor-title>img {
+    height: 70px;
+}
+
+.logo {
+    margin-right: 10px;
+}
+
+.w-100 {
+    width: 100%!important;
+}
+
+.none-list li::marker {
+    content: "";
+}
+
+.dont-break-out {
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.mx-auto {
+    float: none;
+    margin: 0 auto;
+}
+
+.grid-title{
+    color: #efb310;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.grid-subtitle{
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media only screen and (max-width: 340px) {
+    .ualbany-logo {
+        margin-left: 5%;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #landing-page-text-wrapper {
+        bottom: 10%;
+        width: 35%;
+    }
+    #landing-page-text-wrapper>h1 {
+        font-size: 6vw;
+    }
+    #landing-page-text-wrapper>p {
+        display: none;
+    }
+    #landing-logo-wrapper {
+        bottom: 10%;
+        width: 20%;
+    }
+    .main-content {
+        padding-top: 20px;
+    }
+    .main-content>ul, .main-content>ol {
+        margin-left: 20px;
+    }
+    .content>#search-box {
+        margin-bottom: 5px;
+        width: 80%;
+    }
+    .content>#search-box-results {
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #landing-page-text-wrapper {
+        bottom: 10%;
+        width: 40%;
+    }
+    #landing-page-text-wrapper>h1 {
+        font-size: 6vw;
+    }
+    #landing-page-text-wrapper>p {
+        display: none;
+    }
+    #landing-logo-wrapper {
+        bottom: 10%;
+        width: 20%;
+    }
+    .main-content>ul, .main-content>ol {
+        margin-left: 20px;
+    }
+    .content>#search-box {
+        margin-bottom: 5px;
+        width: 60%;
+    }
+    .content>#search-box-results {
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #page-header {
+        display: contents;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #landing-page-text-wrapper {
+        bottom: 10%;
+        width: 40%;
+    }
+    #landing-page-text-wrapper>h1 {
+        font-size: 4.6vw;
+    }
+    #landing-page-text-wrapper>p {
+        display: none;
+    }
+    #landing-logo-wrapper {
+        bottom: 10%;
+        width: 20%;
+    }
+    .main-content>h1, .main-content>h2, .main-content>h3, .main-content>h4, .main-content>h5, .main-content>h6, .main-content>p, .main-content>div {
+        margin-left: 50px;
+    }
+    .main-content>ul, .main-content>ol {
+        margin-left: 90px;
+    }
+    .content>#search-box {
+        margin: 0px 0px 5px 0px;
+        width: 255px;
+    }
+    .content>#search-box-results {
+        margin: 0px 0px 20px 0px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .content>#search-box {
+        width: 510px;
+    }
+    #landing-page-text-wrapper {
+        bottom: 10%;
+        width: 40%;
+    }
+    #landing-page-text-wrapper>h1 {
+        font-size: 3.75vw;
+    }
+    #landing-page-text-wrapper>p {
+        display: block;
+        font-size: 1.9vw;
+    }
+    #landing-logo-wrapper {
+        bottom: 10%;
+        width: 20%;
+    }
+}
+
+@media only screen and (min-width: 1192px) {
+    #landing-page-text-wrapper {
+        bottom: 10%;
+        width: 40%;
+    }
+    #landing-page-text-wrapper>h1 {
+        font-size: 3.2vw;
+    }
+    #landing-page-text-wrapper>p {
+        font-size: 1.75vw;
+    }
+    #landing-logo-wrapper {
+        bottom: 10%;
+        width: 20%;
+    }
+}

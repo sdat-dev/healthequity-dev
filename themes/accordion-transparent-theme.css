@@ -1,0 +1,167 @@
+/*------------------------------------------------------------------
+Primary use:    academic-programs.css file used for styling content
+                inside Academic programs page
+-------------------------------------------------------------------*/
+
+.accordion-header > .paragraph-question{
+    font-family: 'News Cycle', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: #46166b;
+    padding: 8px 20px;
+}
+
+.accordion-header{
+    background-color: #DDD;
+    border-radius: 1%;
+}
+
+.accordion-header:hover{
+    cursor: pointer;
+}
+
+.accordion-header > .content-header-no-margin{
+    padding: 8px 20px;
+}
+
+.accordion-header > .content-header-no-margin:hover{
+    padding: 6px 20px 11px 20px;
+    text-decoration: underline;
+}
+
+.accordion-content{
+    display: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+button.btn-link, button.btn-link > .content-header-no-margin{
+    color: #46166b;
+    background-color: rgba(0,0,0,0);
+    margin-bottom: 0px;
+}
+
+button.btn-link{
+    width: 100%;
+    padding: 10px !important;
+    text-align: left;
+}
+
+button.btn-link h3{
+    margin-top: 0;
+}
+
+button.btn-link:focus{
+    border: none;
+    outline: none;
+}
+
+.panel-title > .collapsed> i {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.panel-heading{
+     padding: 0px 0px;
+ }
+
+ .panel-default>.panel-heading {
+    /* color: #333; */
+    background-color:transparent;
+    border-color: transparent; 
+}
+
+.panel-title > .btn{
+    width: 100%;
+    text-align: left;
+    color:#46166b;
+    padding: 0px;
+    background-color:transparent;
+    font-size: 28px;
+    padding: 10px !important;
+    border: none;
+    text-transform: uppercase;
+    border: 2px solid #D3D3D3;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+}
+
+.panel-title > .btn:focus{
+    outline: none;
+}
+
+.panel-title > .btn-link:hover{
+    color: white;
+    text-decoration: none;
+    background-color:#46166b;
+}
+
+.panel-group > .panel{
+    background-color: transparent;
+}
+.panel-body{
+    padding-left: 10px;
+}
+
+.panel-title > .btn > i{
+    float: right;
+}
+
+.accordion > .card:not(:last-of-type),.accordion > .card:last-of-type{
+    border-bottom: 2px solid rgba(0,0,0,0.125);
+}
+
+.card-header{
+    color:#46166b;
+    padding: 0px;
+    background-color: rgba(0,0,0,0);
+    margin-top: 2px;
+}
+
+.card-header:hover  .content-header-no-margin, 
+.card-header:hover button.btn-link, .card-header:hover, .card-header:hover .fa-chevron-down
+{
+    color: white;
+    background-color: #46166b;
+    text-decoration: none;
+}
+
+.btn:focus h3{
+    text-decoration: none;
+    background-color: #46166b;
+    color: white;
+}
+.btn:focus {
+    text-decoration: none;
+    background-color: #46166b;
+    color: white;
+}
+
+.fa-chevron-up{
+    float: right;
+    margin-right: 10px;
+    color: inherit;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+.level2 .btn{
+    background-color: #EEB211;
+    font-size: 24px;
+    color: #46166b;
+}
+
+.level2 .btn:hover{
+    background-color: #46166b;
+    color: white;
+}
+
+.level3 .btn{
+    background-color: #d1d1d1;
+    font-size: 20px;
+    color: #46166b;
+}
+
+.level3 .btn:hover{
+    background-color: #46166b !important;
+    color: white;
+}

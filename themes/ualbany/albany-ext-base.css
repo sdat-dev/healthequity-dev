@@ -1,0 +1,793 @@
+/**
+ * Albany External Base Stylesheet
+ * This stylesheet contains mobile and global styles that
+ * override albany-base.css in the site's theme.
+ */
+
+/* SITE MAINTENANCE NOTICE */
+#noticesiteinmaintenance_3 p,
+#block-noticesiteinmaintenance p {
+	color: white;
+}
+#noticesiteinmaintenance_3,
+#block-noticesiteinmaintenance {
+	padding: 2em 2em 2em 9em;
+	color: white;
+	background-color: #900;
+}
+
+/* HOMEPAGE BUTTON FIX */
+.path-node-57861 .academics a.flex-item{
+  padding: 1.3em 1em 1em 1em!important;
+}
+/* Front page Program Search */
+input#programsearch-input {
+  font-size: 0.8em;
+  padding-left: 0.5em !important; /* important needed to get around injector */
+}
+input#programsearch-input::placeholder,
+input#programsearch-input::-webkit-input-placeholder,
+input#programsearch-input::-moz-placeholder,
+input#programsearch-input:-ms-input-placeholder,
+input#programsearch-input:-moz-placeholder {
+  padding: 0;
+}
+
+/* MOBILE NAV FIX - already fixed in albany-base.css  (removed line 215) */
+/* fix scrolling issue for mobile nav when length of navigation overflows length of device */
+#mobile-nav-holder {
+  height: unset;
+  min-height: 100vh;
+  overflow: scroll;
+}
+.region-mobile-navigation.drawer-nav {
+  overflow: scroll;
+}
+
+/* ADDING LINK STYLES TO LINKS IN FORMS - ADD TO LINE 109 OF ALBANY BASE */
+legend a {
+    background-image: linear-gradient(120deg,#edba32 0%,#edba32 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 106%;
+    transition: background-size 0.15s ease-in;
+    color: #444!important;
+}
+
+/* FORMS */
+/* Handles both webform forms and embedded Slate forms */
+.field--type-webform {
+	margin-top: 2em;
+}
+input[type="text"].form-control,
+input[type="email"],
+input[type="tel"],
+textarea.form-control,
+.select-wrapper select,
+.slateform .form_responses  input[type="text"],
+.slateform .form_responses  input[type="email"],
+.slateform .form_responses  input[type="tel"],
+.slateform .form_responses  textarea,
+.slateform .form_responses  select {
+	border-radius: 0;
+	padding: 0.5em 0.75em;
+	height: 2.5em;
+	font-size: 1em;
+}
+.form-control:focus,
+.slateform .form_responses input:focus,
+.slateform .form_responses textarea:focus{
+  background-color: #f9f1ff;
+}
+fieldset, .form-item {
+	margin-bottom: 1.5em;
+}
+.webform-required {
+	float: right;
+	margin-top: -1em;
+	font-style: italic;
+	font-size: 0.9em;
+}
+legend {
+	margin-bottom: 0;
+	font-size: 1.1em;
+	font-weight: normal;
+	border: none;
+}
+label {
+	font-size: 1.1em;
+	font-weight: normal;
+}
+.form-item.form-type-radio,
+.form-item.form-type-checkbox {
+	margin-bottom: 0.75em;
+}
+.form-item.form-type-radio label {
+	font-size: 1em;
+}
+.select-wrapper select[multiple="multiple"],
+.slateform .form_responses select[multiple="multiple"] {
+	height: unset;
+}
+.select-wrapper::after {
+	color: #666;
+}
+.slateform div.form_header {
+	font-weight: normal;
+	background: unset;
+	padding: 0;
+	font-size: 1.4em;
+	margin: 0 0 0.5em;
+}
+.slateform div.form_header .form_label {
+	font-weight: normal !important;
+	background: unset !important;
+	padding: 0 !important;
+}
+
+/* TABLE FIX - does not need to carry into new theme
+   This is to correct some legacy cruft left over in the old theme. */
+table thead {
+	background-color: #f4f5f5;
+	color: black;
+}
+table th {
+	border: 1px solid black;
+	background-color: #ddd;
+}
+table > thead > tr > th,
+.table > thead > tr > th {
+	border: 1px solid black;
+}
+table tr:hover, table tr:hover td, table tr:hover td p, table tr:hover th, table tr:hover th p {
+	color: black !important;
+	background-color: #eee !important;
+}
+
+/* SIDEBAR */
+.region-sidebar-first .sidebar-menu-block ul.menu.nav li a,
+.region-sidebar-first .block-groupmenu-block ul.menu.nav li a {
+	padding-right: 20px;
+}
+
+/* PARAGRAPHS */
+.paragraph--type--accordion .panel-default > .panel-heading a[aria-expanded="true"] {
+  font-weight: 600;
+}
+/* turn off old method of styling: when transfering these into the new theme,
+   be sure to strip these out rather than overriding them */
+.paragraph--type--location .location-detail-text .contact-numbers .field + .field {
+	padding-left: unset;
+}
+.paragraph--type--location .location-detail-text .contact-numbers .field {
+	display: unset;
+	width: unset;
+}
+
+/* FLEXSLIDER */
+
+
+/* NEWS LISTINGS */
+.article-panel img {
+	margin: 0 0 1em 0;
+	min-width: 100%;
+}
+.paragraph--type--dept-news .pagination,
+.view.news-center-view-display .pagination {
+	padding: 0;
+	margin-bottom: 2em;
+}
+.paragraph--type--dept-news .pagination > li > a,
+.view.news-center-view-display .pagination > li > a {
+	font-size: 1.5rem;
+	margin: 2px;
+	padding: 1rem 1.75rem;
+}
+/* Departmental News */
+.paragraph--type--dept-news .news-article {
+	-webkit-box-shadow: unset; /* override theme's styles - pull these out of the new theme */
+	-moz-box-shadow: unset;
+	box-shadow: unset;
+	padding-bottom: 1.5em;
+	border-bottom: 1px solid #ddd;
+}
+.paragraph--type--dept-news .news-article:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+.paragraph--type--dept-news .news-article .dept-news-image > img {
+	padding: 0 0 1em 0;
+}
+/* A generic purple box for general use, particularly on custom blocks */
+.purple-box {
+ background-color: #46166C;
+ color: white;
+ padding: 2em;
+ margin-bottom: 2em;
+ font-size: 0.9em;
+}
+.purple-box a {
+  color: white;
+  text-decoration: underline;
+}
+.purple-box li {
+	margin-bottom: 0.5em;
+	line-height: 1.4em;
+}
+/* Experts */
+.experts-full-list ul {
+	list-style: none;
+	column-count: 2;
+	column-gap: 1em;
+	padding: 0;
+	margin-left: 1em;
+}
+.experts-full-list li {
+	list-style: none;
+	margin: 0 0 0.5em 0;
+}
+
+/* POP UP FORM MODAL */
+.path-node-60991 .form-overlay:target {
+  visibility: visible;
+  opacity: 1;
+  position: fixed;
+  overflow:scroll;
+  z-index:10000;
+}
+.path-node-60991 .form-overlay {
+background: rgba(0, 0, 0, 0.7);
+position: absolute;
+  z-index: 200;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+height: 100%;
+overflow:hidden;
+}
+.path-node-60991 #requestinfo .popup {
+  margin: 15% auto;
+  padding: 20px;
+  background: #fff;
+  width: 50%;
+  position: relative;
+}
+.path-node-60991 #requestinfo .popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.path-node-60991 #requestinfo .popup .close:hover {
+  color: #46166b;
+}
+.path-node-60991 #requestinfo .popup .content {
+  max-height: 30%;
+}
+.path-node-60991 html input[type="button"], input[type="reset"], input[type="submit"], button, .button, a.button{
+  padding:.5em 2em!important;
+}
+
+/* RESOURCE FAIRS */
+body.page-node-type-resource-fair .form-group .resource-listing {
+	background-color: #f4f4f4;
+	padding: 2em;
+	margin: 0 -15px;
+}
+body.page-node-type-resource-fair .resource-listing .views-row {
+	background-color: white;
+}
+
+/* SPECIAL */
+/* Candlelighting 2020 - styles just for the page /candlelighting */
+body.path-node-61926 header#navbar {
+  display: none;
+}
+body.path-node-61926 div.main-container{
+  padding-top:0px;
+}
+body.path-node-61926 .opening-video {
+  z-index: 5;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin-top: -2px;
+}
+body.path-node-61926 .opening-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* GRADUATE SCHOOL */
+/* Program Requirements Snippets Search */
+#admissions-requirements-output {
+	margin: 0 0 0 1em;
+}
+#admissions-requirements-output h4 {
+  color: #46166C;
+  margin: 1em 0 0.5em;
+}
+#admissions-requirements-output .views-field-field-information {
+	margin-top: 0.5em;
+}
+/* remove .view-program-deadlines-and-requirements class after the new
+   #block-views-block-list-of-academic-programs-requirements-block is released.
+   Also: #block-views-block-list-of-academic-programs-requirements-block-2 is new Albany theme.
+   The other without the "-2" is the legacy theme. */
+.view-program-deadlines-and-requirements .views-row,
+#block-views-block-list-of-academic-programs-requirements-block-2 .views-row,
+#block-views-block-list-of-academic-programs-requirements-block .views-row {
+  display: none;
+}
+#block-views-block-list-of-academic-programs-requirements-block-2 .views-row .views-field-field-degree-type,
+#block-views-block-list-of-academic-programs-requirements-block-2 .views-row .views-field-field-area-of-study,
+#block-views-block-list-of-academic-programs-requirements-block-2 .views-row  .views-field-title-1,
+#block-views-block-list-of-academic-programs-requirements-block .views-row .views-field-field-degree-type,
+#block-views-block-list-of-academic-programs-requirements-block .views-row .views-field-field-area-of-study,
+#block-views-block-list-of-academic-programs-requirements-block .views-row  .views-field-title-1 {
+	display: none;
+}
+.view-program-deadlines-and-requirements .paragraph--type--accordion,
+#block-views-block-list-of-academic-programs-requirements-block-2 .paragraph--type--accordion
+#block-views-block-list-of-academic-programs-requirements-block .paragraph--type--accordion {
+  padding-top: 1em;
+  padding-bottom: 0;
+}
+form#requirements-search {
+	width: 100%;
+	z-index: 100;
+	margin-bottom: 2em;
+}
+input#requirements-search-input {
+	width: 99.7%;
+	height: 50px;
+	padding-left: 2.7em;
+}
+#admissions-requirements-search #results {
+	max-width: 99.6%;
+	border-bottom: 1px solid #a7a7a7;
+	border-left: 1px solid #a7a7a7;
+	border-right: 1px solid #a7a7a7;
+}
+#admissions-requirements-search #results ul {
+  padding: 0;
+  margin: 0;
+}
+#admissions-requirements-search #results li {
+	padding: 0;
+	font-size: 2.3rem;
+	list-style: none;
+}
+#admissions-requirements-search #results li:hover {
+	border-top: 1px solid #d6d6d6;
+	border-bottom: 1px solid #d6d6d6;
+	background-color: #f5f5f5;
+}
+#admissions-requirements-search #results li.program-not-found {
+	padding: 1em;
+}
+#requirements-search button {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: top;
+  width: 100%;
+	background: unset;
+	color: #222;
+	padding: 0.7em 1em;
+	font-family: unset;
+	text-transform: unset;
+	font-size: unset;
+}
+#requirements-search button:hover {
+	box-shadow: none;
+	color: black;
+}
+#admissions-requirements-search #results .degreetype {
+	font-family: TradeGothicLTStd-BdCn20;
+	font-size: .8em;
+	text-align: right;
+	margin-right: 1.5em;
+	position: relative;
+	top: 4px;
+}
+#admissions-requirements-search #results .degree-program-title {
+	text-align: left;
+}
+/* Filterable Graduate Program Listing (ported to new theme) */
+#browse-and-filter-programs {
+	margin-top: 2em;
+}
+/* Filterable Graduate Program Listing: LEGACY THEME STYLES - new theme styles are in the theme */
+#views-exposed-form-programs-filterable-listing-block-1,
+#views-exposed-form-programs-filterable-listing-by-dept-block-1 {
+	margin-top: 1em;
+}
+#block-views-block-programs-filterable-listing-block-1 .view-content,
+#block-views-block-programs-filterable-listing-by-dept-block-1 .view-content {
+  margin: 2em 0 3em;
+}
+#block-views-block-programs-filterable-listing-block-1 .form-item-field-department-taxonomy-target-id.form-group,
+#block-views-block-programs-filterable-listing-by-dept-block-1 .form-item-field-department-taxonomy-target-id.form-group {
+	display: block;
+}
+#block-views-block-programs-filterable-listing-block-1 .form-actions,
+#block-views-block-programs-filterable-listing-by-dept-block-1 .form-actions {
+  margin-top: 1.5em;
+}
+#block-views-block-programs-filterable-listing-block-1 .form-actions button,
+#block-views-block-programs-filterable-listing-by-dept-block-1 .form-actions button {
+  padding-top: 0.25em !important;
+  padding-bottom: 0.25em !important;
+}
+#block-views-block-programs-filterable-listing-block-1 .views-row,
+#block-views-block-programs-filterable-listing-by-dept-block-1 .views-row {
+	padding: 6px 0 12px;
+	border-bottom: 1px solid #ddd;
+}
+#block-views-block-programs-filterable-listing-block-1 .views-row .field-content,
+#block-views-block-programs-filterable-listing-by-dept-block-1 .views-row .field-content {
+	display: grid;
+	grid-template-columns: 2.5fr 1fr 1fr;
+	align-items: center;
+}
+#block-views-block-programs-filterable-listing-block-1 .degree-name,
+#block-views-block-programs-filterable-listing-by-dept-block-1 .degree-name {
+  text-transform: initial;
+  font-size: 2rem;
+}
+#block-views-block-programs-filterable-listing-block-1 .delivery_modality,
+#block-views-block-programs-filterable-listing-by-dept-block-1 .delivery_modality {
+  font-size: 0.9em;
+}
+#block-views-block-programs-filterable-listing-block-1 .form-checkboxes,
+#block-views-block-programs-filterable-listing-by-dept-block-1 .form-checkboxes {
+	min-width: 150px;
+}
+#block-views-block-programs-filterable-listing-block-1 .form-inline legend,
+#block-views-block-programs-filterable-listing-by-dept-block-1 .form-inline legend {
+	display: none;
+}
+#block-views-block-programs-filterable-listing-block-1 .form-inline .checkbox,
+#block-views-block-programs-filterable-listing-by-dept-block-1 .form-inline .checkbox {
+	display: block;
+}
+#block-views-block-programs-filterable-listing-block-1 .form-inline .checkbox input[type="checkbox"],
+#block-views-block-programs-filterable-listing-by-dept-block-1 .form-inline .checkbox input[type="checkbox"] {
+	top: 0px;
+}
+
+/* Five Year and Combined Bachelors and Masters Programs View - LEGACY THEME STYLES - new theme styles are in the theme */
+#block-views-block-five-year-and-combined-programs-block-1 {
+	margin: 1em 0 3em;
+}
+#block-views-block-five-year-and-combined-programs-block-1 h2.block-title {
+	text-transform: unset;
+	color: #46166C;
+	font-size: 4.4rem;
+}
+#block-views-block-five-year-and-combined-programs-block-1 h3 {
+	text-transform: unset;
+	margin-top: 1em;
+}
+
+
+
+
+/* APPLY NOW CAMPAIGN PAGE STYLES */
+
+.path-node-66021 header#navbar {
+    display: none;
+}
+.path-node-66021 main, /* new */
+.path-node-66021 div.main-container /* legacy */ {
+	padding-top:0px;
+}
+
+.path-node-66021 .panel{
+	background-color: transparent;
+}
+
+.path-node-66021 a.button.purplebutton {
+    width: 100%;
+    text-align: center;
+    font-size: 1.3em;
+    text-transform: none;
+}
+
+.path-node-66021 a.button.purplebutton.second{
+  margin:0px;
+}
+
+.path-node-66021 span.hide-mobile{
+  display:inline;
+}
+
+
+.path-node-66021 .region-below-content section#block-albany-views-block-below-content-block-1 .form-group .view-content .row .col-lg-12{
+  display:grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto auto auto auto;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.path-node-66021 .row.apply-image {
+    position: relative;
+    z-index: 10;
+    padding: 0px 3em;
+    background-image: linear-gradient(47deg, rgba(36,36,36,1) 10%, rgba(36,36,36,0) 65%), url('https://www.albany.edu/sites/default/files/apply-foreground-cropped_0.png');
+  background-position: center;
+    background-size: cover;
+    width: 100vw;
+    position: relative;
+    min-height: 70vh;
+    margin-left: 0px;
+    margin-right:0px;
+}
+
+.path-node-66021 .row.apply-image h1{
+	color: #fff;
+	margin-top: 32vh;
+	text-shadow: 2px 2px 10px #333;
+}
+
+span.yellow{
+	color: #edba32;
+}
+
+.path-node-66021 .row.apply-image h2{
+	color: #fff;
+	width: 60%;
+	text-shadow: 2px 2px 5px #333;
+    line-height: 1.2;
+    font-size: 4rem;
+}
+
+.path-node-66021 .row.apply-image p{
+	color:#fff;
+	margin-top:10px;
+	font-size: .9em;
+}
+
+.path-node-66021 .no-left {
+    margin-left: -15px!important;
+}
+
+.path-node-66021 .region-below-content section#block-albany-views-block-below-content-block-1 .form-group .view-content .col-lg-12 .paragraph:first-child {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-image: url('https://www.albany.edu/sites/default/files/apply-background-cropped.jpg');
+  background-position: center;
+    background-size: cover;
+    width: 100vw;
+    position: relative;
+    min-height: 70vh;
+}
+
+.path-node-66021 .region-below-content section#block-albany-views-block-below-content-block-1 .form-group .view-content .col-lg-12 .paragraph:nth-child(2) {
+  grid-column-start: 1;
+  grid-column-end: span 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  width: 96%;
+  padding: 3em 0px;
+  position: relative;
+  z-index: 3;
+  margin: 0px 1%;
+}
+
+.path-node-66021 .region-below-content section#block-albany-views-block-below-content-block-1 .form-group .view-content .col-lg-12 .paragraph:nth-child(2) .paragraph:first-child {
+    background: none!important;
+width: 98%;
+    min-height: auto;
+    margin-left: auto;
+    
+}
+
+.path-node-66021 .region-below-content section#block-albany-views-block-below-content-block-1 .form-group .view-content .col-lg-12 .paragraph:nth-child(3) {
+  grid-column-start: 2;
+  grid-column-end: span 1;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  width: 98%;
+  margin-left: 2%;
+  padding: 3em 0px;
+      position: relative;
+    z-index: 3;
+}
+
+.path-node-66021 .region-below-content section#block-albany-views-block-below-content-block-1 .form-group .view-content .col-lg-12 .paragraph:nth-child(4) {
+   grid-column-start: 2;
+  grid-column-end: span 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  width: 96%;
+  padding: 3em 0px;
+      position: relative;
+    z-index: 3;
+    margin-left:1%;
+}
+
+.path-node-66021 .region-below-content section#block-albany-views-block-below-content-block-1 .form-group .view-content .col-lg-12 .paragraph:nth-child(4) .paragraph:first-child {
+    background: none!important;
+width: 98%;
+    min-height: auto;
+    margin-left: auto;
+
+}
+
+.path-node-66021 .region-below-content section#block-albany-views-block-below-content-block-1 .form-group .view-content .col-lg-12 .paragraph:nth-child(5) {
+  grid-column-start: 1;
+  grid-column-end: span 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  width: 98%;
+  padding: 3em 0px;
+      position: relative;
+    z-index: 3;
+}
+
+.path-node-66021 .region-below-content section#block-albany-views-block-below-content-block-1 .form-group .view-content .col-lg-12 .paragraph:nth-child(6) {
+	grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 4;
+  grid-row-end: 4;
+      position: relative;
+    z-index: 3;
+    background-image:url('https://www.albany.edu/communicationsmarketing/greatness/images/Diagonal_Pattern_PMS_124.png');
+    background-size: cover;
+    padding: 3em 0px;
+
+}
+
+.path-node-66021 #requestinfoform h4 {
+    margin-bottom: 2em;
+}
+
+.path-node-66021 .form-holder {
+    width: 40%;
+    margin-left: 30%;
+}
+
+.path-node-66021 .form-holder input#form_ab79d305-715a-46a9-94be-bda726849a00, .path-node-66021 .form-holder input#form_3332094d-5c5a-429a-8c76-739fc7e68a83, .path-node-66021 .form-holder select, .path-node-66021 .form-holder textarea{
+    width: 100%;
+    
+}
+
+.path-node-66021 footer.footer{
+    display: none;
+}
+
+.path-node-66021 .footer{
+   background-color:#333;
+   margin-top: 0px;
+}
+
+.path-node-66021 .footer p{
+	color:#fff;
+}
+
+.path-node-66021 .footer a{
+	color:#fff;
+}
+
+.path-node-66021 .unleash{
+	position:relative;
+	z-index: 10;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+
+.path-node-66021 .row.apply-image h2{
+  width:80%;
+}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+.path-node-66021 span.hide-mobile{
+  display:none;
+}
+
+.path-node-66021 a.button.purplebutton.second{
+  margin-left: -15px;
+  margin-top: 15px;
+  width: 105%;
+}
+
+.path-node-66021 .row.apply-image h1{
+
+  margin-top:15vh;
+}
+
+
+.path-node-66021 .region-below-content section#block-albany-views-block-below-content-block-1 .form-group .view-content .col-lg-12 .paragraph:nth-child(2) {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  width: 98%;
+  padding: 3em 0px;
+  position: relative;
+  z-index: 3;
+  margin-left: 1%;
+}
+
+
+.path-node-66021 .region-below-content section#block-albany-views-block-below-content-block-1 .form-group .view-content .col-lg-12 .paragraph:nth-child(5) {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  padding: 0px;
+  width: 100%;
+}
+
+.path-node-66021 .region-below-content section#block-albany-views-block-below-content-block-1 .form-group .view-content .col-lg-12 .paragraph:nth-child(3) {
+  display:none;
+
+}
+
+.path-node-66021 .region-below-content section#block-albany-views-block-below-content-block-1 .form-group .view-content .col-lg-12 .paragraph:nth-child(4) {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 4;
+  grid-row-end: 4;
+  margin-left: 1%;
+}
+
+.path-node-66021 .row.apply-image h2 {
+    color: #fff;
+    width: 90%;
+    text-shadow: 2px 2px 5px #333;
+    line-height: 1.2;
+    font-size: 2.5rem;
+}
+
+.path-node-66021 .region-below-content section#block-albany-views-block-below-content-block-1 .form-group .view-content .col-lg-12 .paragraph:nth-child(6) {
+grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+
+.path-node-66021 #requestinfoform h4{
+  width: 80%;
+  margin-left: 10%; 
+}
+
+.path-node-66021 .form-holder {
+    width: 80%;
+    margin-left: 10%;
+}
+
+}
+
+/* POST-THEME RELEASE - get these into the theme */
+/* IMAGES IN SIDEBAR FIRST */
+#sidebar-first figure img {
+	width: 100%;
+}
+#sidebar-first figcaption {
+	display: block; /* XXX Fix on line 393 of albany-base.css */
+}
+/* FIELD ANCHOR ID (should never appear) */
+.field.field--name-field-anchor-id {
+	display: none;
+}
+/* XXX added to theme - doesn't need to get carried over */
+.paragraph--type--sidebar-callout .field-group-background-image .sidebar-callout-overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+}

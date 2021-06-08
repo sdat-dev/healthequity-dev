@@ -1,0 +1,108 @@
+.panelist-img{
+
+    max-width: 175px;
+    height: auto;
+    border-radius: 50%;
+
+}
+
+.panelist-info{
+    text-align: center;
+    color: black;
+}
+
+.panelist-info > .name{
+    font-weight: bold;
+}
+
+.content a {
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 106%;
+    transition: background-size 0.15s ease-in;
+    color: #46166b !important;
+    text-decoration: none !important;
+}
+
+.content a:hover {
+    background-image: linear-gradient(120deg, #edba32 0%, #edba32 100%);
+    background-size: 105% 105%;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.paragraph--type--gridder {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.paragraph--type--gridder .grid-col-color,
+.paragraph--type--gridder .gridder-bg {
+    display: none;
+}
+
+.paragraph--type--gridder .view-gridder .view-content:after {
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+.paragraph--type--gridder .field--name-field-paragraph-title {
+    margin: 45px 0;
+    text-align: center;
+    display: block;
+    color: #46166C;
+}
+
+.paragraph--type--gridder .grid-table {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.paragraph--type--gridder .grid-table .grid-tablerow {
+    display: table-row;
+}
+
+.paragraph--type--gridder .grid-table .grid-tablerow .grid-tablecell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.paragraph--type--gridder .grid-cols {
+    /*
+		&.gridder-overlay .grid-tablecell {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+		*/
+    background: #46166B;
+    border: solid 3px white;
+    padding: 50px 15px;
+    text-align: center;
+    font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: normal;
+}
+
+.paragraph--type--gridder .grid-cols .grid-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.paragraph--type--gridder .grid-cols .grid-link:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.paragraph--type--gridder .grid-cols .grid-title {
+    font-size: 8.5rem;
+    margin-bottom: 10px;
+    color: #efb310;
+    line-height: 8rem;
+}

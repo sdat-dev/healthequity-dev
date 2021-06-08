@@ -1,0 +1,57 @@
+.researchadmins{
+    width: 100%;
+}
+
+.member-img {
+    width: 175px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.member-info{
+    text-align: center;
+    padding: 20px;
+}
+
+.title{
+    color: black;
+}
+
+a {
+    color: #46166C;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #46166C;
+    text-decoration: underline;
+}
+
+.email{
+   font-style: italic;
+}
+
+.main-content> #search-box{
+    background-color: #F9F9F9;
+    height: 40px;
+    border: 1px solid #B9B9B9;
+    border-radius: 1%;
+    font-size: 20px;
+    padding: 5px 0px 10px 2px;
+}
+
+.main-content>#search-box-results{
+    display: block;
+}
+
+#search-button{
+    height: 40px;
+    width: 40px;
+    background-color: #000000;
+    color: white;
+    position: relative;
+    top: 3px;
+    left: -1px;
+}
