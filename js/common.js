@@ -276,7 +276,7 @@ let addheader = function (headers) {
         image = typeof headers[i].logo != 'undefined' && headers[i].logo != '' ? headers[i].logo : image;
         header1 = typeof headers[i].content != 'undefined' && headers[i].content != '' ? headers[i].content : header1;
         header2 = typeof headers[i].subcontent != 'undefined' && headers[i].subcontent != '' ? headers[i].subcontent : header2;
-        let source = '../assets/images/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
+        let source = 'https://sdat-dev.github.io/healthequity-dev/assets/images/' + (typeof headers[i].source != 'undefined' && headers[i].source != '' ? headers[i].source + '/' : '');
         if (i == 0) {
             content += '<div class="carousel-item active">';
         }
