@@ -1,0 +1,1 @@
+﻿positionForPages[38]={page:38,positions:[{word:"ALBANY",left:0.332322,top:0.925734,width:0.110496,height:0.023175},{word:"EDU/RESEARCH",left:0.452104,top:0.925734,width:0.215099,height:0.023175}]};
