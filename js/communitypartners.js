@@ -1,6 +1,6 @@
 window.onload = function () {
-    let requestURL = "https://sdat-dev.github.io/resources/healthequity/data/communitypartners.json"; 
-    let datarequestURL = "https://sdat-dev.github.io/resources/healthequity/data/communitypartnersdata.json"; 
+    let requestURL = "data/communitypartners.json"; 
+    let datarequestURL = "data/communitypartnersdata.json"; 
     let request =  axios.get(requestURL);
     let datarequest =  axios.get(datarequestURL);
     let maincontentContainer = document.getElementsByClassName('main-content')[0];
@@ -44,7 +44,7 @@ let buildPartnersContent = function(partners){
     
     let content = '';
     for(var i=0; i< partners.length; i++){
-        if(partners[i].FirstName == "")
+        if(partners[i].Q12 == "")
             continue;
         content +='<div class = "search-container partner-info"><img class = "partner-logo" src = "https://sdat-dev.github.io/resources/healthequity/assets/images/community-partners/'+ partners[i].Logo + '"/>'+
         '<h2 class = "content-header-no-margin" style="font-size:30px;">'+ (partners[i].HomePageLink != ""? '<a class = "no-link-decoration" href = ' + partners[i].HomePageLink + '>' + partners[i].OrganizationName + '</a>': partners[i].OrganizationName) +'</h2>'+
