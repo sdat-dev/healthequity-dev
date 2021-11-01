@@ -13,9 +13,9 @@ let addTopHeader = function () {
                 '<div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">'+
                     '<div id="logo">'+
                         '<a aria-label="University at Albany Home" href="https://www.albany.edu">'+
-                            '<img id="albany-logo-minerva" alt="Minerva" src="https://sdat-dev.github.io/healthequity/assets/images/ualbany/albany-logo-minerva.png">'+
-                            '<img id="albany-logo-text" alt="University at Albany" src="https://sdat-dev.github.io/healthequity/assets/images/ualbany/albany-logo-text.png">'+
-                            '<img id="albany-logo-mobile" alt="UAlbany" src="https://sdat-dev.github.io/healthequity/assets/images/ualbany/ualbany-logo.png">'+
+                            '<img id="albany-logo-minerva" alt="Minerva" src="https://sdat-dev.github.io/resources/healthequity/assets/images/ualbany/albany-logo-minerva.png">'+
+                            '<img id="albany-logo-text" alt="University at Albany" src="https://sdat-dev.github.io/resources/healthequity/assets/images/ualbany/albany-logo-text.png">'+
+                            '<img id="albany-logo-mobile" alt="UAlbany" src="https://sdat-dev.github.io/resources/healthequity/assets/images/ualbany/ualbany-logo.png">'+
                         '</a>'+
                     '</div>'+
                     '<nav id="top-nav" aria-label="MyUAlbany and Give Links">'+
