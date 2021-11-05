@@ -95,14 +95,16 @@ window.onload = function () {
 let buildResearchersContent = function(experts){
     let content = '';
     let universityResearchers = experts.filter(function(expert){
-        return (expert["University"] != "") && (expert.OtherCollegeSchoolDivision == "");
+        return expert["University"] != "Other Organization";
     });
     let otherResearchers = experts.filter(function(expert){
-        return (expert["University"] == "");
+        return expert["University"] == "Other Organization";
     });
     let tabattribute = "University"
     let distincttabs = getDistinctAttributes(universityResearchers, 'University'); 
-    distincttabs.push("Other Organizations");
+    if(otherResearchers.length > 0)
+        distincttabs.push("Other Organizations");
+
     content = createTabNavigation(distincttabs, tabattribute);
     let tabContent = [];
     for(let i = 0; i< distincttabs.length; i++){
@@ -170,6 +172,8 @@ let buildUniversityResearchers = function(tabId, tabexperts){
         if(level1 == "")
         {
             level1 = "Other";
+            if(level2Elem == "")
+                return;
         }
         contactElem+= generateAccordionElem(1, collapseId1, headerId1, tabId, childId1, level1, level2Elem);
     });
@@ -186,7 +190,7 @@ let buildUniversityResearcherElements = function(researchers){
             continue;
         let researcher = researchers[i];
         content +='<div class = "search-container expert-info">'+
-        '<img class = "expert-image" src = "assets/images/researchers/' + ((researcher["photopath"] != '' && !researcher["photopath"].includes(".docx"))? researcher.ResponseId+'_'+researcher["photopath"]  : 'placeholder.jpg') +'"/>'+
+        '<img class = "expert-image" src = "assets/images/researchers/' + researcher["Photopath"] +'"/>'+
         '<h2 class = "content-header-no-margin">'+ (researcher["CV"] == ""? researcher.FirstName + ' '+ researcher.LastName : '<a class = "no-link-decoration" href = ' + getHttpLink(researcher["CV"]) + '>' + researcher.FirstName + ' '+ researcher.LastName + '</a>') + '</h2>'+
         '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">'+ (researcher.JobTitle != ''? researcher.JobTitle + ',<br>':'') + (researcher.Department != ''? researcher.Department :'') + '</h5>' +
         generateLogoContent(researcher) +'<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email + 
@@ -200,7 +204,7 @@ let buildUniversityResearcherElements = function(researchers){
 let buildOtherResearchers = function(tabId, tabresearchers){
     let contactElem = '';
     contactElem += '<div class="panel-group" id = "' + tabId + '" role="tablist" aria-multiselectable="true">';
-    let distinctLevel1s = getDistinctOrganizations(tabresearchers);
+    let distinctLevel1s = getDistinctAttributes(tabresearchers, "OtherOrganization");
     distinctLevel1s.sort();
     var index = distinctLevel1s.indexOf("");
     if(index != -1)
@@ -216,16 +220,16 @@ let buildOtherResearchers = function(tabId, tabresearchers){
         let level2Elem = '';
         //filter level2s
         let level2s = tabresearchers.filter(function(researcher){
-            return (researcher["University"] == "") ? researcher["OtherCollegeSchoolDivision"] == level1 : researcher["University"] == level1;
+            return researcher["OtherOrganization"] == level1;
         }); 
         if(level2s.length > 0)
         {
-            let distinctLevel2s = getDistinctDivisions(level2s);
+            let distinctLevel2s = getDistinctAttributes(level2s, "CollegeSchoolDivision");
             distinctLevel2s.sort();
             distinctLevel2s.forEach(function(level2){
                 //filter level3 
                 let level3s = level2s.filter(function(researcher){
-                    return (researcher["University"] == "") ? researcher.Department == level2 : researcher.CollegeSchoolDivision == level2;
+                    return researcher.CollegeSchoolDivision == level2;
                 });
                 level3s.sort((a,b) => b.firstName - a.firstName)
                 //for level2s build simple list
@@ -236,6 +240,8 @@ let buildOtherResearchers = function(tabId, tabresearchers){
         if(level1 == "")
         {
             level1 = "Other";
+            if(level2Elem == "")
+                return;
         }
 
         contactElem+= generateAccordionElem(1, collapseId1, headerId1, tabId, childId1, level1, level2Elem);
@@ -245,28 +251,6 @@ let buildOtherResearchers = function(tabId, tabresearchers){
     return contactElem;
 }
 
-let getDistinctOrganizations = function(researchers){
-    let mappedAttributes = researchers.map(function(researcher){
-        return  (researcher["University"] == "") ? researcher["OtherCollegeSchoolDivision"] : researcher["University"];
-    });
-    let distinctOrganizations = mappedAttributes.filter(function(v, i, a){
-        return a.indexOf(v) === i;
-     });
-
-    return distinctOrganizations;
-}
-
-let getDistinctDivisions = function(researchers){
-    let mappedAttributes = researchers.map(function(researcher){
-        return  (researcher["University"] == "") ? researcher.Department : researcher.Department;
-    });
-    let distinctDivisions = mappedAttributes.filter(function(v, i, a){
-        return a.indexOf(v) === i;
-     });
-
-    return distinctDivisions;
-}
-
 let buildOtherResearcherElements = function(researchers){
     let content = '';
     for(var i=0; i< researchers.length; i++){
@@ -274,9 +258,11 @@ let buildOtherResearcherElements = function(researchers){
             continue;
         let researcher = researchers[i];
         content +='<div class = "search-container expert-info">'+
-        '<img class = "expert-image" src = "assets/images/researchers/' + ((researcher["photopath"] != '' && !researcher["photopath"].includes(".docx"))? researcher.ResponseId+'_'+researcher["photopath"]  : 'placeholder.jpg') +'"/>'+
+        '<img class = "expert-image" src = "assets/images/researchers/' + researcher["Photopath"] +'"/>'+
         '<h2 class = "content-header-no-margin">'+ (researcher["ResearchGate"] == ""? researcher.FirstName + ' '+ researcher.LastName : '<a class = "no-link-decoration" href = ' + getHttpLink(researcher["ResearchGate"]) + '>' + researcher.FirstName + ' '+ researcher.LastName + '</a>') + '</h2>'+
-        '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">'+ (researcher.JobTitle != ''? researcher.JobTitle + ',<br>':'') + (researcher.Department != ''? researcher.Department :'') + '</h5>' +
+        '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">'+ (researcher.JobTitle != ''? researcher.JobTitle + ',<br>':'') +
+        //put break after department only if the collegeschooldivision is present 
+        (researcher.Department != ''? researcher.Department + (researcher.CollegeSchoolDivision == ''? "":',<br>' + researcher.CollegeSchoolDivision):'')+ '</h5>' +
         generateLogoContent(researcher) +'<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email + 
         '>'+ researcher.Email+ '</a><br>'+ (researcher.PhoneNumber != ""? '<strong>Phone: </strong>'+ formatPhone(researcher.PhoneNumber) + '<br>': "")+'<strong>Research Interests: </strong>'+ 
         getResearchInterests(researcher) + '</p><p>' + researcher.ResearchExpertise +'</p>'+ generateProjectsContent([researcher["Project1"],researcher["Project2"],researcher["Project3"],researcher["Project4"],researcher["Project5"]])+
@@ -446,5 +432,3 @@ let getHttpLink = function(link){
     }
     return result;
 }
-
-$('.carousel').carousel({pause: null});
