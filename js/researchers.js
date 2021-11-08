@@ -191,7 +191,7 @@ let buildUniversityResearcherElements = function(researchers){
         let researcher = researchers[i];
         content +='<div class = "search-container expert-info">'+
         '<img class = "expert-image" src = "assets/images/researchers/' + researcher["Photopath"] +'"/>'+
-        '<h2 class = "content-header-no-margin">'+ (researcher["CV"] == ""? researcher.FirstName + ' '+ researcher.LastName : '<a class = "no-link-decoration" href = ' + getHttpLink(researcher["CV"]) + '>' + researcher.FirstName + ' '+ researcher.LastName + '</a>') + '</h2>'+
+        '<h2 class = "content-header-no-margin">'+ (researcher["InstitutionalPage"] == ""? researcher.FirstName + ' '+ researcher.LastName : '<a class = "no-link-decoration" href = ' + getHttpLink(researcher["InstitutionalPage"]) + '>' + researcher.FirstName + ' '+ researcher.LastName + '</a>') + '</h2>'+
         '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">'+ (researcher.JobTitle != ''? researcher.JobTitle + ',<br>':'') + (researcher.Department != ''? researcher.Department :'') + '</h5>' +
         generateLogoContent(researcher) +'<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email + 
         '>'+ researcher.Email+ '</a><br>'+ (researcher.PhoneNumber != ""? '<strong>Phone: </strong>'+ formatPhone(researcher.PhoneNumber) + '<br>': "")+'<strong>Research Interests: </strong>'+ 
@@ -259,7 +259,7 @@ let buildOtherResearcherElements = function(researchers){
         let researcher = researchers[i];
         content +='<div class = "search-container expert-info">'+
         '<img class = "expert-image" src = "assets/images/researchers/' + researcher["Photopath"] +'"/>'+
-        '<h2 class = "content-header-no-margin">'+ (researcher["ResearchGate"] == ""? researcher.FirstName + ' '+ researcher.LastName : '<a class = "no-link-decoration" href = ' + getHttpLink(researcher["ResearchGate"]) + '>' + researcher.FirstName + ' '+ researcher.LastName + '</a>') + '</h2>'+
+        '<h2 class = "content-header-no-margin">'+ (researcher["InstitutionalPage"] == ""? researcher.FirstName + ' '+ researcher.LastName : '<a class = "no-link-decoration" href = ' + getHttpLink(researcher["InstitutionalPage"]) + '>' + researcher.FirstName + ' '+ researcher.LastName + '</a>') + '</h2>'+
         '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">'+ (researcher.JobTitle != ''? researcher.JobTitle + ',<br>':'') +
         //put break after department only if the collegeschooldivision is present 
         (researcher.Department != ''? researcher.Department + (researcher.CollegeSchoolDivision == ''? "":',<br>' + researcher.CollegeSchoolDivision):'')+ '</h5>' +
