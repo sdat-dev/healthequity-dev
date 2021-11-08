@@ -190,7 +190,7 @@ let buildUniversityResearcherElements = function(researchers){
             continue;
         let researcher = researchers[i];
         content +='<div class = "search-container expert-info">'+
-        '<img class = "expert-image" src = "assets/images/researchers/' + researcher["Photopath"] +'"/>'+
+        '<img class = "expert-image" src = "https://sdat-dev.github.io/resources/healthequity/assets/images/researchers/' + researcher["Photopath"] +'"/>'+
         '<h2 class = "content-header-no-margin">'+ (researcher["InstitutionalPage"] == ""? researcher.FirstName + ' '+ researcher.LastName : '<a class = "no-link-decoration" href = ' + getHttpLink(researcher["InstitutionalPage"]) + '>' + researcher.FirstName + ' '+ researcher.LastName + '</a>') + '</h2>'+
         '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">'+ (researcher.JobTitle != ''? researcher.JobTitle + ',<br>':'') + (researcher.Department != ''? researcher.Department :'') + '</h5>' +
         generateLogoContent(researcher) +'<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + researcher.Email + 
@@ -258,7 +258,7 @@ let buildOtherResearcherElements = function(researchers){
             continue;
         let researcher = researchers[i];
         content +='<div class = "search-container expert-info">'+
-        '<img class = "expert-image" src = "assets/images/researchers/' + researcher["Photopath"] +'"/>'+
+        '<img class = "expert-image" src = "https://sdat-dev.github.io/resources/healthequity/assets/images/researchers/' + researcher["Photopath"] +'"/>'+
         '<h2 class = "content-header-no-margin">'+ (researcher["InstitutionalPage"] == ""? researcher.FirstName + ' '+ researcher.LastName : '<a class = "no-link-decoration" href = ' + getHttpLink(researcher["InstitutionalPage"]) + '>' + researcher.FirstName + ' '+ researcher.LastName + '</a>') + '</h2>'+
         '<h5 class = "content-header-no-margin faculty-title" style = "font-size:20px;">'+ (researcher.JobTitle != ''? researcher.JobTitle + ',<br>':'') +
         //put break after department only if the collegeschooldivision is present 
