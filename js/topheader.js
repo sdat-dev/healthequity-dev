@@ -236,8 +236,13 @@ let addTopHeader = function () {
                 'class="headerSearchBtn form-submit search-button btn btn-sm btn-success s3-m-3">'+
             '</form>'+
         '</div>'+
-
-        '</div>'+
+    '</div>'+
+    
+    '<div class="view-content" style="padding-top: 50px;line-height: 1.2em;padding-bottom: 0.6em;background-color: #edba32;text-align: center">'+
+        '<a href="/jobopportunity">'+
+            '<span style="color: black;font-weight: 600;font-size: 1.0em;" class="alert-title">New Job Posting! <span style="color: black;font-weight: 600;font-size: 1.0em;">Learn more></span></span>'+
+        '</a>'+
+    '</div>'+
     '</div>'+
 '</div>'; 
 sidemenu.innerHTML = content;
