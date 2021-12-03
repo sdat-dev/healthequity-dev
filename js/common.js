@@ -1,6 +1,6 @@
 let sidemenuItems = [{"item":"Home","link":"home.html"},{"item":"Job Opportunity","link":"jobopportunity.html"},{"item":"Call for Extended Abstracts","link":"callforextendedabstracts.html","subItems":[{"item":"Timeline","link":"timeline.html"},{"item":"About the Editors","link":"abouttheeditors.html"},{"item":"Topics of Interest","link":"topicsofinterest.html"},{"item":"Abstract Submission Guidelines","link":"abstractsubmissionguidelines.html"}]},{"item":"Funder Toolkit (NEW)","link":"fundertoolkit(new).html","subItems":[{"item":"Funding Opportunity (NEW)","link":"fundingopportunity(new).html"},{"item":"Proposal Preparation","link":"proposalpreparation.html"},{"item":"Library Resources","link":"libraryresources.html"},{"item":"Video Resources","link":"videoresources.html"},{"item":"Talk to a Program Officer","link":"talktoaprogramofficer.html"}]},{"item":"Resources","link":"resources.html","subItems":[{"item":"Papers and Publications","link":"papersandpublications.html"},{"item":"Research Data","link":"researchdata.html"},{"item":"Collaboration Space","link":"collaborationspace.html"}]},{"item":"Researchers and Partners","link":"researchersandpartners.html","subItems":[{"item":"Researchers","link":"researchers.html"},{"item":"Community Partners","link":"communitypartners.html"}]},{"item":"Current Events","link":"currentevents.html"},{"item":"Past Events","link":"pastevents.html","subItems":[{"item":"Three Campus Conversation","link":"threecampusconversation.html"},{"item":"2021 Symposium","link":"2021symposium.html"}]},{"item":"Questions","link":"questions.html"}]
 //SideMenu Start
-//What evet written  before '//SideMenu Start' will be relace with sidemenuItems in automation scripts
+//What ever written  before '//SideMenu Start' will be relace with sidemenuItems in automation scripts
 
 let addsidemenu = function (page, markactive = true, extraindirection = false) {
     let sidemenu = document.getElementById('side-menu');
@@ -297,6 +297,7 @@ let addheader = function (headers) {
                 '<div id = "landing-page-text-wrapper">' +
                 '<h1>' + header1 + '</h1>' +
                 '<p>' + header2 + '</p>' +
+                '<button class="button-properties"><a href="/healthequity-dev/jobopportunity.html">Job Opening</a></button>' +
                 '</div>' +
                 '</div>';
         }
