@@ -240,7 +240,7 @@ let addTopHeader = function () {
     
     '<div class="view-content" style="width: 105%;position: static;margin-left: -30px;padding-top: 50px;line-height: 1.2em;padding-bottom: 0.6em;background-color: #edba32;text-align: center">'+
         '<a href="/healthequity-dev/jobopportunity.html">'+
-            '<span style="color: black;font-weight: 600;font-size: 1.0em;" class="alert-title">New Job Posting! <span style="color: black;font-weight: 600;font-size: 1.0em;">Learn more></span></span>'+
+            '<span style="color: black;font-weight: 600;font-size: 1.0em;" class="alert-title">Call for UAlbany Social and Health Equity Leader! <span style="color: black;font-weight: 600;font-size: 1.0em;">Learn more></span></span>'+
         '</a>'+
     '</div>'+
     '</div>'+
