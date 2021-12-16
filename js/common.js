@@ -320,7 +320,7 @@ addfooter = function (relativepath = ".") {
                                 '<div class="col-12 col-sm-offset-0 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">'+
                                     '<a target="_blank" href="https://www.albany.edu/">'+
                                         '<img alt="University at Albany Logo" class=" img-responsive footer-logo" height="39"'+
-                                        'src="https://sdat-dev.github.io/healthequity/assets/images/UAlbany-logo.png" typeof="Image" />'+
+                                        'src="https://sdat-dev.github.io/resources/healthequity/assets/images/UAlbany-logo.png" typeof="Image" />'+
                                     '</a>'+
                                     '<p>'+
                                         '<a target="_blank" href="https://www.facebook.com/universityatalbany"><span class="fab fa-facebook-f footer-icon" role="img"'+
