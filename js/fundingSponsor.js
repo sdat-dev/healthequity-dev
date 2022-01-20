@@ -146,7 +146,8 @@ function getAccordiationData(p) {
 
 let generateFederalAccordionContent = function (arr, img_url, funding_name) {
     let content = '';
-    var today = new Date();
+    let a = [{day: 'numeric'}, {month: 'short'}, {year: 'numeric'}];
+    var today = join(new Date, a, '-');
     var flag = false;
     var flag_defunct = true;
 
@@ -253,28 +254,31 @@ let generateFederalAccordionContent = function (arr, img_url, funding_name) {
         }
         var description = arr[i].synopsis.replace(/<[^>]*>/g, '');
         if (dueDate != "Continuous Submission/Contact the Program Officer") {
-            if (dueDate > today) {
+            if (Date.parse(dueDate) > Date.parse(today)) {
                 flag = true;
+                console.log(flag);
                 dueDate = deadlineDate;
             }
         }
-        let imageElement = (arr[i].logo == '') ? '' : '<div class = "col-xl-2 col-lg-3"><img class = "agency-logo" src = "' + img_url + '" /></div>';
-        content = content + '<div class = "display-flex opportunity-container search-container">' + imageElement +
-            '<div class = "col-xl-10 col-lg-9">' + '<h4 class = "opp-header black-content-header-no-margin">' + arr[i].prog_title + '</h4>' + '<div class = "opp-details display-flex">' +
+        if (flag){
+            let imageElement = (arr[i].logo == '') ? '' : '<div class = "col-xl-2 col-lg-3"><img class = "agency-logo" src = "' + img_url + '" /></div>';
+            content = content + '<div class = "display-flex opportunity-container search-container">' + imageElement +
+                '<div class = "col-xl-10 col-lg-9">' + '<h4 class = "opp-header black-content-header-no-margin">' + arr[i].prog_title + '</h4>' + '<div class = "opp-details display-flex">' +
 
-            '<div class = "col-sm-12 col-md-12 col-lg-12 col-xl-6">' +
-            '<i class="fas fa-flag"></i> <strong>Agency Name: </strong>' + arr[i].spon_name +
-            '<br>' +
-            '<i class="fas fa-dollar-sign"></i> <strong>Estimated Funding: </strong>' + Estimated_Funding +
-            '<br>' +
-            '</div><div class = "col-sm-12 col-md-12 col-lg-12 col-xl-6">' +
-            '<i class="fas fa-calendar-day"></i> <strong>Date: </strong>' + dueDate +
-            '<br></div></div></div>' +
-            '<p class = "opp-description">' + description + '</p>';
-        if (arr[i].deadline_note != null) {
-            content += buildduedatenote(arr[i].deadline_note);
+                '<div class = "col-sm-12 col-md-12 col-lg-12 col-xl-6">' +
+                '<i class="fas fa-flag"></i> <strong>Agency Name: </strong>' + arr[i].spon_name +
+                '<br>' +
+                '<i class="fas fa-dollar-sign"></i> <strong>Estimated Funding: </strong>' + Estimated_Funding +
+                '<br>' +
+                '</div><div class = "col-sm-12 col-md-12 col-lg-12 col-xl-6">' +
+                '<i class="fas fa-calendar-day"></i> <strong>Date: </strong>' + dueDate +
+                '<br></div></div></div>' +
+                '<p class = "opp-description">' + description + '</p>';
+            if (arr[i].deadline_note != null) {
+                content += buildduedatenote(arr[i].deadline_note);
+            }
+            content += '<p class="width100"><button type = "button" class = "details-button" onclick = "window.open(\'' + arr[i].programurl + '\',\'_blank\')">View Details</button></p></div>';
         }
-        content += '<p class="width100"><button type = "button" class = "details-button" onclick = "location.href = \'' + arr[i].programurl + '\'">View Details</button></p></div>';
     }
     return content;
 }
@@ -314,6 +318,14 @@ let checkFileExists = function (url) {
         return true;
     }
 }
+
+function join(t, a, s) {
+    function format(m) {
+       let f = new Intl.DateTimeFormat('en', m);
+       return f.format(t);
+    }
+    return a.map(format).join(s);
+ }
 
 var parseData = function (p) {
     data = p;
