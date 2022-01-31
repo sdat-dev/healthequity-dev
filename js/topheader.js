@@ -20,6 +20,7 @@ let addTopHeader = function () {
                     '</div>'+
                     '<nav id="top-nav" aria-label="MyUAlbany and Give Links">'+
                         '<ul>'+
+                            '<li><a title="Information about the University\'s response to COVID-19" href="https://www.albany.edu/covid-19">COVID-19</a></li>'+
                             '<li><a title="Link to Faculty and Staff Portal" href="https://www.albany.edu/myualbany">MYUALBANY</a></li>'+
                             '<li><a title="Donate to the University" href="https://www.alumni.albany.edu/s/1642/18-giving/landing.aspx?sid=1642&amp;gid=2&amp;pgid=2040&amp;appealcode=uahome">GIVE</a></li>'+
                         '</ul>'+
@@ -231,7 +232,7 @@ let addTopHeader = function () {
             'data-block-plugin-id="block_content:f5fc99ed-9b0b-4fef-9f5a-708a4da0e836">'+
             '<div'+
                 'class="field field--name-body field--type-text-with-summary field--label-hidden field--item">'+
-                '<p><a href="/search-results">Search</a></p>'+
+                '<p><a href="https://www.albany.edu/search-results">Search</a></p>'+
             '</div>'+
         '</section>'+
 
