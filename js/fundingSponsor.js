@@ -348,7 +348,7 @@ let generateFederalAccordionContent = function (arr, img_url, funding_name) {
             if(arr[i].programurl != null){
                 content += '<p class="width100"><button type = "button" class = "details-button" onclick = "window.open(\'' + arr[i].programurl + '\',\'_blank\')">View Details</button></p></div>';
             }else{
-                content += '</div>';
+                content += '<p class="width100"><button type = "button" class = "details-button" onclick = "window.open(\'https://spin.infoedglobal.com/Program.html?' + arr[i].id + '\',\'_blank\')">View Details</button></p></div>';
             }
         }
     }
