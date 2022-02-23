@@ -82,7 +82,7 @@ let getAddress = function(partner){
 let getPointOfContact = function(partner){
     let pointofcontact = "";
     pointofcontact +=(partner.Title== ""? partner.Title + " ":"")+ partner.FirstName + " " + partner.LastName+ ",<br> "+ partner.JobTitle + '<br> <a class = "email-link" href = mailto:' + partner.Email + 
-    '>'+ partner.Email+ '</a>'+ (partner.PhoneNumber == ""? '' : ',<br>'+ formatPhone(partner.PhoneNumber)); 
+    '>'+ partner.Email+ '</a>'+ (partner.PhoneNumber == ""? '' : '<br>'+ formatPhone(partner.PhoneNumber)); 
     return pointofcontact;
 }
 
