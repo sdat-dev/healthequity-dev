@@ -24,7 +24,7 @@ let addSpinData = function () {
         signature: "97707afe4847b9862f27c9ce80a9cb6e",
         responseFormat: 'JSONP',
         pageSize: 3000,
-        columns: ["synopsis", "id", "spon_name", "NextDeadlineDate", "total_funding_limit", "programurl", "sponsor_type", "prog_title", "revision_date", "deadline_note", "sponwebsite"],
+        columns: ["synopsis", "id", "spon_name", "NextDeadlineDate", "total_funding_limit", "programurl", "sponsor_type", "prog_title", "revision_date", "deadline_note"],
         isCrossDomain: true,
         callback: 'parseData',
         keywords: '[SOLR]keyword_exact:"Health Disparities"',
