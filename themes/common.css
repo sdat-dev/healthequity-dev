@@ -485,7 +485,7 @@ Primary use:    Common.css file used for styling header and
         width: 35%;
     }
     #landing-page-text-wrapper>h1 {
-        font-size: 6vw;
+        font-size: 4vw;
     }
     #landing-page-text-wrapper>p {
         display: none;
@@ -506,6 +506,19 @@ Primary use:    Common.css file used for styling header and
     }
     .content>#search-box-results {
         margin-bottom: 30px;
+    }
+    .panel-title > .btn {
+        font-size: 4vw !important; 
+        white-space: pre-wrap;
+    }
+    .container-fluid {
+        display : block !important;
+    }
+    .dropdown {
+        display: block;
+    }
+    #side-menu {
+        display: none;
     }
 }
 
@@ -533,6 +546,12 @@ Primary use:    Common.css file used for styling header and
     }
     .content>#search-box-results {
         margin-bottom: 30px;
+    }
+    .dropdown {
+        display: none;
+    }
+    #side-menu {
+        display: block;
     }
 }
 

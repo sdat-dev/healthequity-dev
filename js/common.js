@@ -67,6 +67,71 @@ let addsidemenu = function (page, markactive = true, extraindirection = false) {
     }
 }
 
+let addsidemenu2 = function (page, markactive = true, extraindirection = false) {
+    let sidemenu = document.getElementById('side-menu2');
+
+    for (let i = 0; i < sidemenuItems.length; i++) {
+        let item = sidemenuItems[i];
+        var addsubmenu = false;
+        if (item.hasOwnProperty('subItems')) {
+            if (item.item == page) {
+                addsubmenu = true;
+            }
+            else {
+                let subitems = item.subItems;
+                subitems.forEach(element => {
+                    if (element.item == page) {
+                        addsubmenu = true;
+                        return;
+                    }
+                });
+            }
+        }
+
+        if (addsubmenu == false) {
+            let link = '';
+            if (item.hasOwnProperty('subItems') && item.link == '#') {
+                link = item.subItems[0].link;
+            }
+            else {
+                link = item.link;
+            }
+            if(extraindirection)
+                link = '../'+ link;
+            let menuItem = document.createElement("div");
+            let menuItemContent = '<a href="' + link + '">' + item.item + '</a>';
+            menuItem.innerHTML = menuItemContent;
+            menuItem.classList.add('navigation-items');
+            menuItem.classList.add('hover-highlight');
+            if (page == item.item) {
+                menuItem.setAttribute("id", "active-page");
+            }
+            sidemenu.appendChild(menuItem);
+        }
+        else {
+            let menuItem = document.createElement("div");
+            let menuItemContent = '<a href="';
+            if(extraindirection)
+                menuItemContent += '../';
+            menuItemContent += (item.link != '#' ? item.link : subitems[0].link) + '">' + item.item + '</a>';
+            menuItem.innerHTML = menuItemContent;
+            menuItem.classList.add('navigation-items');
+            menuItem.classList.add('hover-highlight');
+
+            if (page == item.item) {
+                menuItem.setAttribute("id", "active-page");
+            }
+            sidemenu.appendChild(menuItem);
+            menuItem = document.createElement("div");
+            menuItem.classList.add('expanded-navigation-item');
+            let submenu = buildsubmenu(item.subItems, page, markactive, extraindirection);
+            menuItemContent = submenu;
+            menuItem.innerHTML = menuItemContent;
+            sidemenu.appendChild(menuItem);
+        }
+    }
+}
+
 let customSort = function(sortOrder, objects){
     let i,j = 0;
     for(i = 0; i< objects.length; i++)
