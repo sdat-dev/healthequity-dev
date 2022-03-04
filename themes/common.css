@@ -514,7 +514,7 @@ Primary use:    Common.css file used for styling header and
     .container-fluid {
         display : block !important;
     }
-    .dropdown {
+    .dropdown.top-nav {
         display: block;
     }
     #side-menu {
@@ -547,7 +547,7 @@ Primary use:    Common.css file used for styling header and
     .content>#search-box-results {
         margin-bottom: 30px;
     }
-    .dropdown {
+    .dropdown.top-nav {
         display: none;
     }
     #side-menu {
