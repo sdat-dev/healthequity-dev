@@ -1,47 +1,69 @@
-let requestURL = "data/fundingopportunity.json";
-let request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
-let maincontentContainer = document.getElementsByClassName('main-content')[0];
-request.onload = function () {
-    const webelementsjson = request.response;
-    //condition for checking if browser is Internet Explorer
-    let webelements = ((false || !!document.documentMode)) ? JSON.parse(webelementsjson) : webelementsjson;
-    let contentElement = document.getElementsByClassName('content')[0];
-    let content = getContent(webelements);
-    contentElement.innerHTML = content;
-    maincontentContainer.appendChild(contentElement);
-    addfooter();
-    addSpinData();
+// let requestURL = "data/fundingopportunity.json";
+// let request = new XMLHttpRequest();
+// request.open('GET', requestURL);
+// request.responseType = 'json';
+// request.send();
+// let maincontentContainer = document.getElementsByClassName('main-content')[0];
+// request.onload = function () {
+//     const webelementsjson = request.response;
+//     //condition for checking if browser is Internet Explorer
+//     let webelements = ((false || !!document.documentMode)) ? JSON.parse(webelementsjson) : webelementsjson;
+//     let contentElement = document.getElementsByClassName('content')[0];
+//     let content = getContent(webelements);
+//     contentElement.innerHTML = content;
+//     maincontentContainer.appendChild(contentElement);
+//     addfooter();
+//     addSpinData();
+// }
+
+window.onload = function () {
+    let requestURL = "data/fundingopportunity.json";
+    let datarequestURL = "data/solicitationsdata.json";
+    let request =  axios.get(requestURL);
+    let datarequest =  axios.get(datarequestURL);
+    let maincontentContainer = document.getElementsByClassName('main-content')[0];
+    axios.all([request, datarequest]).then(axios.spread((...responses) => {
+        let solicitationscontent =  responses[0].data;
+        let solicitations = responses[1].data;
+        let webelements = solicitationscontent;
+        let content = getContent(webelements);
+        let contentElement = document.createElement('div');
+        contentElement.classList.add('content');
+        contentElement.innerHTML = content.trim();
+        maincontentContainer.appendChild(contentElement);
+        addfooter();
+        // addSpinData();
+        parseData(solicitations);
+        clearsearch();
+    }))
 }
 
-let addSpinData = function () {
-    let spinURL = "https://spin.infoedglobal.com/Service/ProgramSearch";
-    var data = {
-        PublicKey: "96183961-68B2-4B14-AEA3-376E734380CD",
-        InstCode: "SUNYALB",
-        signature: "97707afe4847b9862f27c9ce80a9cb6e",
-        responseFormat: 'JSONP',
-        pageSize: 3000,
-        columns: ["synopsis", "id", "spon_name", "NextDeadlineDate", "total_funding_limit", "programurl", "sponsor_type", "prog_title", "revision_date", "deadline_note"],
-        isCrossDomain: true,
-        callback: 'parseData',
-        keywords: '[SOLR]keyword_exact:"Health Disparities"',
-        uniqueId: '801E4DCB-736C-4601-B'
-    };
+// let addSpinData = function () {
+//     let spinURL = "https://spin.infoedglobal.com/Service/ProgramSearch";
+//     var data = {
+//         PublicKey: "96183961-68B2-4B14-AEA3-376E734380CD",
+//         InstCode: "SUNYALB",
+//         signature: "97707afe4847b9862f27c9ce80a9cb6e",
+//         responseFormat: 'JSONP',
+//         pageSize: 3000,
+//         columns: ["synopsis", "id", "spon_name", "NextDeadlineDate", "total_funding_limit", "programurl", "sponsor_type", "prog_title", "revision_date", "deadline_note"],
+//         isCrossDomain: true,
+//         callback: 'parseData',
+//         keywords: '[SOLR]keyword_exact:"Health Disparities"',
+//         uniqueId: '801E4DCB-736C-4601-B'
+//     };
 
-    let params = new URLSearchParams(data).toString();
-    let final_url = spinURL + '?' + params;
+//     let params = new URLSearchParams(data).toString();
+//     let final_url = spinURL + '?' + params;
 
-    $.ajax({
-        url: final_url,
-        dataType: 'jsonp',
-        success: function (dataWeGotViaJsonp) {
-            console.log(dataWeGotViaJsonp);
-        }
-    });
-}
+//     $.ajax({
+//         url: final_url,
+//         dataType: 'jsonp',
+//         success: function (dataWeGotViaJsonp) {
+//             console.log(dataWeGotViaJsonp);
+//         }
+//     });
+// }
 
 function setNoOfSoils(arr) {
     let a = [{day: 'numeric'}, {month: 'short'}, {year: 'numeric'}];
@@ -108,8 +130,8 @@ function getAccordiationData(p) {
         var length = 0;
         var img_url = "";
         var arr = [];
-        for (var j = 0; j < covid_data.Programs.length; j++) {
-            var programs_value = covid_data.Programs[j];
+        for (var j = 0; j < covid_data.length; j++) {
+            var programs_value = covid_data[j];
 
             if (programs_value.spon_name.includes('NSF') ||
                 programs_value.spon_name.includes('National Science Foundation') ||
@@ -191,7 +213,7 @@ function getAccordiationData(p) {
     let accordionElement = document.getElementById('fundingopps');
     accordionElement.classList.add('accordion-container');
     accordionElement.innerHTML = content.trim();
-    maincontentContainer.appendChild(accordionElement);
+    // maincontentContainer.appendChild(accordionElement);
 }
 
 let generateFederalAccordionContent = function (arr, img_url, funding_name) {
@@ -340,7 +362,7 @@ let generateFederalAccordionContent = function (arr, img_url, funding_name) {
                 '<br>' +
                 '</div><div class = "col-sm-12 col-md-12 col-lg-12 col-xl-6">' +
                 '<i class="fas fa-calendar-day"></i> <strong>Date: </strong>' + dueDate +
-                '<br></div></div></div>' +
+                '<br></div></div></div><br><br><br><br><br><br><br><br>' +
                 '<p class = "opp-description">' + description + '</p>';
             if (arr[i].deadline_note != null) {
                 content += buildduedatenote(arr[i].deadline_note);
@@ -401,10 +423,10 @@ function join(t, a, s) {
 
 var parseData = function (p) {
     data = p;
-    if (p.ErrorType != null) {
-        if ($('#waiter').is(':visible')) $('#waiter').hide();
-        alert(p.ErrorType + '\n' + p.ErrorMessage);
-        return;
-    }
+    // if (p.ErrorType != null) {
+    //     if ($('#waiter').is(':visible')) $('#waiter').hide();
+    //     alert(p.ErrorType + '\n' + p.ErrorMessage);
+    //     return;
+    // }
     getAccordiationData(p);
 };
